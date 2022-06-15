@@ -128,3 +128,7 @@ MEDIA_URL = '/media/'
 
 MEDIA_ROOT = PurePath.joinpath(BASE_DIR, 'media')
 
+try:
+    from .local_settings import *
+except ImportError:
+    print('looks like no local file. you must be on production')
